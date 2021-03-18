@@ -1,0 +1,13 @@
+{
+    "name": "xtzero_me/phpdoc-easyswoole-fastroute",
+    "description": "a phpdoc of easyswoole-fastroute",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xt",
+            "email": "t@xtzero.me"
+        }
+    ],
+    "require": {}
+}
