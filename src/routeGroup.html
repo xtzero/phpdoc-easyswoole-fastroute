@@ -1,0 +1,30 @@
+<div class="group">
+    <div class="groupname">
+        <span class="groupname-text">{{groupName}}</span>
+    </div>
+    <div class="routes">
+        {{routes}}
+    </div>
+</div>
+<style>
+    .group {
+        display: flex;
+        flex-direction: column;
+    }
+    .groupname {
+
+    }
+    .groupname-text {
+        font-size: 1.5em;
+        background-color: #3E86A0;
+        padding: 5px 10px;
+        color: white;
+        border-radius: 5px;
+    }
+    .groupname-text::before {
+        content: "组：";
+    }
+    .routes {
+        margin-top: 20px;
+    }
+</style>

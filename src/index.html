@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="container">
+    <div class="title">
+        {{title}}
+    </div>
+    <div class="basehost">{{baseHost}}</div>
+    <div class="routes">{{routes}}</div>
+</div>
+<div class="column">
+    <div class="column-title">目录</div>
+    {{columns}}
+</div>
+{{json}}
+<script>
+    function scrollToTop(target){
+        // 阻力，数值越大，滑动越慢
+        const gap = document.getElementById(target).offsetTop
+        if (gap > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo({
+                top: gap,
+                behavior: "smooth"
+            })
+        }
+    }
+    (function() {
+        var copyDoms = []
+        for (var i in document.getElementsByClassName('column-item')) {
+            copyDoms.push(document.getElementsByClassName('column-item')[i])
+        }
+        if (copyDoms.length > 0) {
+            copyDoms.forEach(v => {
+                v.addEventListener("click", function() {
+                    var target = v.dataset.target
+                    scrollToTop(target)
+                    console.log("滑动到" + target)
+                })
+            })
+        }
+    })()
+</script>
+<style>
+    html, body {
+        margin: 0 !important;
+    }
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #efeff5;
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        margin: 20px 10px;
+        font-size: 2em;
+        padding-left: 20px;
+        border-left: solid 10px #34537c;
+    }
+    .basehost {
+        margin-left: 10px;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    .basehost::before {
+        content: "🔗   ";
+    }
+    .routes {
+        width: calc(100% - 80px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+    }
+    .column {
+        position: fixed;
+        right: 5vw;
+        top: 5vh;
+        background-color: white;
+        border: solid 1px #efeff5;
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+    .column-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .column-item {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+    .column-item:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: #34537c;
+    }
+</style>
+</body>
+<script>
+(function() {
+    var copyDoms = []
+    for (var i in document.getElementsByClassName('copy-btn')) {
+        copyDoms.push(document.getElementsByClassName('copy-btn')[i])
+    }
+    if (copyDoms.length > 0) {
+        copyDoms.forEach(v => {
+            v.addEventListener("click", function() {
+                var C = document.createElement('input')
+                C.id = 'copyinput'
+                C.type = "text"
+                C.value = v.dataset.copy
+                document.body.append(C)
+                document.getElementById('copyinput').select()
+                document.execCommand('copy',false)
+                C.remove()
+            })
+        })
+    }
+})()
+</script>
+</html>

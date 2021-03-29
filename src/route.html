@@ -1,0 +1,93 @@
+<div class="route-card" id="{{group}}{{route}}">
+    <div class="url">
+        <span class="method">{{method}}</span>
+        <span class="url-url">{{group}}{{route}}</span>
+        <span class="copy-btn" data-copy="{{group}}{{route}}">复制</span>
+    </div>
+    <div class="apiname">{{apiname}}</div>
+    <div class="apidesc">{{apidesc}}</div>
+    <div class="params">
+        <table>
+            <tr>
+                <th>参数名</th>
+                <th>描述</th>
+                <th>必要</th>
+                <th>类型</th>
+                <th>取值范围</th>
+            </tr>
+            {{params}}
+        </table>
+    </div>
+    <div class="function">
+        <span class="function-title">权限菜单</span>
+        <span class="function-function">{{function}}</span>
+    </div>
+</div>
+<style>
+    .route-card {
+        background-color: white;
+        margin-bottom: 5px;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .url {
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        align-items: center;
+    }
+    .method {
+        background-color: #29C566;
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: white;
+    }
+    .url-url {
+        margin-left: 5px;
+        font-size: 1.1em;
+    }
+    .apiname {
+        font-size: 1.3em;
+        margin-top: 5px;
+        color: #34537c;
+    }
+    .apidesc {
+        font-size: 0.9em;
+        color: gray;
+    }
+    .params {
+        margin-top: 10px;
+    }
+    th, td {
+        padding: 0 15px;
+        font-size: 15px;
+    }
+    .function {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    .function-title {
+        border-left: solid 10px #499C54;
+        padding-left: 10px;
+    }
+    .function-function {
+        margin-left: 10px;
+        color: gray;
+    }
+    .copy-btn {
+        margin-left: 10px;
+        font-size: 13px;
+        color: #29C566;
+        padding: 2px 5px;
+        border-radius: 5px;
+    }
+    .copy-btn:hover {
+        cursor: pointer;
+        color: #2A9B55;
+    }
+    .copy-btn:active {
+        color: #618BAC;
+    }
+</style>
