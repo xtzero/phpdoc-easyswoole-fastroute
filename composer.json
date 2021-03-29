@@ -9,5 +9,8 @@
             "email": "t@xtzero.me"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {"xtzero_me\\PhpDoc\\": "./src"}
+    }
 }

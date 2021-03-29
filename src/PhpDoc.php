@@ -1,7 +1,7 @@
 <?php
 
 
-namespace xtzero_me;
+namespace xtzero_me\PhpDoc;
 
 
 use App\HttpController\Router;
